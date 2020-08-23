@@ -134,7 +134,7 @@ class CreateListener implements Listener {
 
 		// Check what the player is doing with the shop creation item in hand:
 		if (action == Action.RIGHT_CLICK_AIR) {
-			if (player.isSneaking()) {
+			if (!player.isSneaking()) {
 				// Cycle shop objects:
 				plugin.getShopObjectTypeRegistry().selectNext(player);
 			} else {
@@ -142,7 +142,7 @@ class CreateListener implements Listener {
 				plugin.getShopTypeRegistry().selectNext(player);
 			}
 		} else if (action == Action.LEFT_CLICK_AIR) {
-			if (player.isSneaking()) {
+			if (!player.isSneaking()) {
 				// Cycle shop objects backwards:
 				plugin.getShopObjectTypeRegistry().selectPrevious(player);
 			} else {
